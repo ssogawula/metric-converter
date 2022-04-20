@@ -12,7 +12,11 @@ public enum Units {
 	MILES("ml"),
 	CELSIUS("C"),
 	FAHRENHEIT("F"),
-	KELVIN("K");
+	KELVIN("K"),
+	MILLIGRAMS("mg"),
+	GRAMS("g"),
+	KILOGRAMS("kg"),
+	TONNE("t");
 	
 	private String value;
 	Units(String value) {

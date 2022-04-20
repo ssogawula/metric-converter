@@ -21,6 +21,7 @@ public class ImperialConverterImpl implements ImperialConverter {
 	@Override
 	public String toMetric(double value, Units fromUnits, Units toUnits) {
 		Assert.notNull(value, "value to convert cannot be blank");
+		
 		switch (toUnits) {
 		case KILOMETERS:
 			return toKilometers(value, fromUnits).apply(toUnits);

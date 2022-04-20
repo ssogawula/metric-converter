@@ -20,17 +20,17 @@ public class TemperatureController {
 	private  TemperatureFactory factory;
 	
 	@GetMapping("/fahrenheit")
-	public ResponseEntity<String> getFahrenheit(@RequestParam Units toUnits, @RequestParam double value) {
-		return new ResponseEntity<String>(factory.getTemperatureConverter(Units.FAHRENHEIT).convertTemperature(toUnits, value), HttpStatus.OK);
+	public String getFahrenheit(@RequestParam Units toUnits, @RequestParam double value) {
+		return factory.getTemperatureConverter(Units.FAHRENHEIT).convertTemperature(toUnits, value);
 	}
 	
 	@GetMapping("/kelvin")
-	public ResponseEntity<String> getKelvin(@RequestParam Units toUnits, @RequestParam double value) {
-		return new ResponseEntity<String>(factory.getTemperatureConverter(Units.KELVIN).convertTemperature(toUnits, value), HttpStatus.OK);
+	public String getKelvin(@RequestParam Units toUnits, @RequestParam double value) {
+		return factory.getTemperatureConverter(Units.KELVIN).convertTemperature(toUnits, value);
 	}
 
 	@GetMapping("/celsius")
-	public ResponseEntity<String> getCelsius(@RequestParam Units toUnits, @RequestParam double value) {
-		return new ResponseEntity<String>(factory.getTemperatureConverter(Units.CELSIUS).convertTemperature(toUnits, value), HttpStatus.OK);
+	public String getCelsius(@RequestParam Units toUnits, @RequestParam double value) {
+		return factory.getTemperatureConverter(Units.CELSIUS).convertTemperature(toUnits, value);
 	}
 }
