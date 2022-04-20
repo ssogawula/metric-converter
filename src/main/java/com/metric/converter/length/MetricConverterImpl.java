@@ -3,6 +3,7 @@ package com.metric.converter.length;
 import java.util.function.Function;
 
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import com.metric.converter.Units;
 import com.metric.converter.annotations.CustomConverter;
@@ -20,6 +21,7 @@ public class MetricConverterImpl implements MetricConverter{
 
 	@Override
 	public String toImperial(double value, Units fromUnits, Units toUnits) {
+		Assert.notNull(value, "value to convert cannot be blank");
 		
 		switch (toUnits) {
 		case FEET:

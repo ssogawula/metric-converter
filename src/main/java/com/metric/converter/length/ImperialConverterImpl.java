@@ -3,6 +3,7 @@ package com.metric.converter.length;
 import java.util.function.Function;
 
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import com.metric.converter.Units;
 import com.metric.converter.exceptions.NotImplementedException;
@@ -19,6 +20,7 @@ public class ImperialConverterImpl implements ImperialConverter {
 
 	@Override
 	public String toMetric(double value, Units fromUnits, Units toUnits) {
+		Assert.notNull(value, "value to convert cannot be blank");
 		switch (toUnits) {
 		case KILOMETERS:
 			return toKilometers(value, fromUnits).apply(toUnits);

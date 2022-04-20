@@ -2,7 +2,8 @@ package com.metric.converter.temperature;
 
 import java.util.function.Function;
 
-import com.metric.converter.Converter;
+import org.springframework.util.Assert;
+
 import com.metric.converter.Units;
 
 public abstract class TemperatureConverter {
@@ -18,7 +19,8 @@ public abstract class TemperatureConverter {
 	}
 
 	public String convertTemperature(Units toUnits, double value) {
-
+		Assert.notNull(value, "value to convert cannot be blank");
+		
 		String result = null;
 
 		switch (toUnits) {
@@ -31,7 +33,7 @@ public abstract class TemperatureConverter {
 		case KELVIN:
 			result = toKelvin(value).apply(toUnits);
 		default:
-			break;
+			throw new IllegalArgumentException("Invalid target units");
 		}
 
 		return result;
