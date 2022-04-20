@@ -1,13 +1,14 @@
 package com.metric.converter.web.temperature;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.metric.converter.AbstractTest;
 import com.metric.converter.Units;
-import com.metric.converter.centimeter.AbstractTest;
 
 public class TemperatureControllerTest extends AbstractTest{
 
@@ -20,6 +21,8 @@ public class TemperatureControllerTest extends AbstractTest{
 				.param("value", "100"))
 		.andExpect(status().isOk())
 		.andReturn();
+		
+		assertEquals(result.getResponse().getContentAsString(), "373,15 K");
 	}
 	
 	@Test
@@ -29,6 +32,8 @@ public class TemperatureControllerTest extends AbstractTest{
 				.param("value", "100"))
 		.andExpect(status().isOk())
 		.andReturn();
+		
+		assertEquals(result.getResponse().getContentAsString(), "212,00 F");
 	}
 	
 	@Test
@@ -38,6 +43,8 @@ public class TemperatureControllerTest extends AbstractTest{
 				.param("value", "100"))
 		.andExpect(status().isOk())
 		.andReturn();
+		
+		assertEquals(result.getResponse().getContentAsString(), "310,93 K");
 	}
 	
 	@Test
@@ -47,6 +54,8 @@ public class TemperatureControllerTest extends AbstractTest{
 				.param("value", "100"))
 		.andExpect(status().isOk())
 		.andReturn();
+		
+		assertEquals(result.getResponse().getContentAsString(), "37,78 C");
 	}
 	
 	@Test
@@ -57,6 +66,7 @@ public class TemperatureControllerTest extends AbstractTest{
 		.andExpect(status().isOk())
 		.andReturn();
 		
+		assertEquals(result.getResponse().getContentAsString(), "-173,15 C");
 	}
 	
 	@Test
@@ -67,6 +77,8 @@ public class TemperatureControllerTest extends AbstractTest{
 				.param("value", "100"))
 		.andExpect(status().isOk())
 		.andReturn();
+		
+		assertEquals(result.getResponse().getContentAsString(), "-279,67 F");
 	}
 	
 	

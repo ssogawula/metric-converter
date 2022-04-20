@@ -5,14 +5,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.metric.converter.AbstractTest;
 import com.metric.converter.Units;
-import com.metric.converter.centimeter.AbstractTest;
-import com.metric.converter.length.ImperialConverter;
-import com.metric.converter.length.MetricConverter;
 
 public class LengthControllerTest extends AbstractTest {
 

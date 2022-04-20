@@ -6,8 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.metric.converter.AbstractTest;
 import com.metric.converter.Units;
-import com.metric.converter.centimeter.AbstractTest;
 
 @SpringBootTest
 public class LengthConverterTest extends AbstractTest{

@@ -1,4 +1,4 @@
-package com.metric.converter.centimeter;
+package com.metric.converter;
 
 import java.io.IOException;
 
